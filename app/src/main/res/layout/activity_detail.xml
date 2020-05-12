@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailActivity">
+
+
+    <!--Toolbar-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/c_toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
+            app:title="News App" >
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!--Toolbar下方的ProgressBar和card-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--ProgressBar-->
+        <LinearLayout
+            android:id="@+id/c_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:indeterminateTint="@android:color/holo_purple" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fetching News" />
+
+        </LinearLayout>
+
+        <!--加了scrollView card 才能滑动-->
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!--CardView包含了所有要显示的东西-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/c_detail_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/c_detail_image"
+                        android:layout_width="400dp"
+                        android:layout_height="250dp" />
+
+                    <TextView
+                        android:id="@+id/c_detail_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@android:string/dialog_alert_title"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+                        <!-- 很奇怪这里加一个weight=1就可以左右对齐了-->
+                        <TextView
+                            android:id="@+id/c_detail_section"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:layout_weight="1"
+                            android:paddingLeft="5dp"/>
+                        <TextView
+                            android:id="@+id/c_detail_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:paddingRight="5dp"/>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/c_detail_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"/>
+
+                    <TextView
+                        android:id="@+id/c_detail_viewfull"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="5dp"/>
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

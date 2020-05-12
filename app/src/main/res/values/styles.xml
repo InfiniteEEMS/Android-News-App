@@ -1,0 +1,18 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!-- 让AppTheme源自于NoActionBar,防止原生的ActionBar-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <!--加一个点，表示Launcher继承了AppTheme的其他属性-->
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+    </style>
+
+</resources>

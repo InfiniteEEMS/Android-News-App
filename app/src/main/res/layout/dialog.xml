@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="300dp"
+    android:layout_height="wrap_content">
+
+
+    <!--dialog图片-->
+    <!--这里的imageView如果设定了height和width，且dialog也设定了宽度就不会出现伸缩错误-->
+    <ImageView android:layout_height="200dp"
+        android:layout_width="300dp"
+        android:id="@+id/c_dialog_image"/>
+
+    <!--dialog里的标题-->
+    <TextView
+        android:id="@+id/c_dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@android:string/dialog_alert_title"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!--边框-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/holo_purple"/>
+
+    <!--dialog里的两个按钮和边框-->
+    <LinearLayout android:layout_height="70dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:id="@+id/c_dialog_twitter"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                />
+        </RelativeLayout>
+
+        <!--边框-->
+        <ImageView
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/holo_purple"/>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:id="@+id/c_dialog_bookmark"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:tint="@android:color/holo_red_light"
+                />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

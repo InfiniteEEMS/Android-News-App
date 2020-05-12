@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/c_detail_toolbar_bookmark"
+        android:icon="@drawable/bookmark_48dp"
+        android:title="TODO"
+        app:showAsAction="ifRoom|collapseActionView" />
+
+    <item
+        android:id="@+id/c_detail_toolbar_share"
+        android:icon="@drawable/bluetwitter"
+        app:showAsAction="ifRoom|collapseActionView"
+        android:title="TODO" />
+
+    <!-- "Mark Favorite", should appear as action button if possible -->
+
+
+</menu>

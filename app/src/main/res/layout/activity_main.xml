@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@color/white">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/c_toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="NewsApp"
+            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
+            >
+        </com.google.android.material.appbar.MaterialToolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/c_view_pager_outer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/c_bottom_navigator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:menu="@menu/c_bottom_menu"
+        />
+
+</LinearLayout>

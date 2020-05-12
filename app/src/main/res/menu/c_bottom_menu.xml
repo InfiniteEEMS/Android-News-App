@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/c_home"
+        android:icon="@drawable/icon_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/c_headlines"
+        android:icon="@drawable/icon_headlines"
+        android:title="News" />
+
+    <item
+        android:id="@+id/c_trending"
+        android:icon="@drawable/icon_trending"
+        android:title="Trending" />
+
+    <item
+        android:id="@+id/c_bookmarks"
+        android:icon="@drawable/icon_bookmarks"
+        android:title="Bookmarks" />
+
+</menu>

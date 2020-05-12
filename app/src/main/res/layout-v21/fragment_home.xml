@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--需要设置Relative，这样所有的才相对于左上角进行布置。通过元素的centerVertical在parent中进行align-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.Home">
+
+
+    <!--ProgressBar相关,包含有text以及圈。元素的gravity进行align-->
+    <LinearLayout
+        android:id="@+id/c_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:indeterminateTint="@android:color/holo_purple" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fetching News" />
+
+    </LinearLayout>
+
+    <!--实现pull to refresh-->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/c_swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--将WeatherCard和RecyclerView用NestScrollView进行结合-->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--第二个linear layout是用于安装所有的card的。包括了weather和recycler.这里如果设置为relativeLayout-->
+            <LinearLayout
+                android:id="@+id/c_all_cards"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--Weather card-->
+                <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/c_weather_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!--这个image写到第一个就会在最下方因为是framelayout-->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/c_weather_image"/>
+
+                        <TextView
+                            android:id="@+id/c_weather_city"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="50dp"
+                            android:layout_marginLeft="50dp"
+                            android:layout_marginTop="20dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:textSize="25sp"
+                            android:text="CITY" />
+
+                        <TextView
+                            android:id="@+id/c_weather_state"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="50dp"
+                            android:layout_marginTop="60dp"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
+                            android:textColor="@color/white"
+                            android:text="STATE" />
+
+
+                        <TextView
+                            android:id="@+id/c_weather_temperature"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="250dp"
+                            android:layout_marginTop="20dp"
+                            android:textSize="25sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:text="TMP" />
+
+
+                        <TextView
+                            android:id="@+id/c_weather_weather"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="250dp"
+                            android:layout_marginTop="60dp"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
+                            android:textColor="@color/white"
+                            android:text="SUNNY" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/c_news_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/darker_gray"
+                    android:scrollbars="vertical"
+                    android:nestedScrollingEnabled="false"/>
+                <!--加了上面这一行，recyclerView就和上面的card一起scroll了-->
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!--暂时的progress bar 方法是Tint。这个会出问题的-->
+
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="0"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:toDegrees="360">
+
+    <shape
+        android:innerRadiusRatio="3"
+        android:shape="ring"
+        android:thicknessRatio="10"
+        android:useLevel="false">
+
+        <size
+            android:width="76dip"
+            android:height="76dip" />
+
+        <gradient
+            android:angle="90"
+            android:endColor="@android:color/holo_purple"
+            android:startColor="@android:color/holo_purple"
+            android:type="sweep"
+            android:useLevel="false" />
+
+    </shape>
+
+</rotate>
